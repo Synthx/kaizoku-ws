@@ -1,0 +1,36 @@
+server:
+  port: 8080
+  compression:
+    enabled: true
+
+spring:
+  application:
+    name: kaizoku
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/terebi
+    username: root
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host:
+    port:
+    username:
+    password:
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          jwk-set-uri: https://www.googleapis.com/oauth2/v3/certs
+          issuer-uri: https://securetoken.google.com/${app.firebase.project-id}
+
+
+app:
+  email:
+    name: Kaizoku
+  firebase:
+    project-id: iptv-player-7cd1a
